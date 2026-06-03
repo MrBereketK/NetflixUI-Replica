@@ -1,0 +1,96 @@
+.footer_outer_container {
+    background-color: #111;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.footer_inner_container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Icons */
+.footer_icons {
+    display: flex;
+    gap: 15px;
+    color: #fff;
+}
+
+/* Links section */
+.footer_data {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer_data ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+}
+
+.footer_data ul li {
+    cursor: pointer;
+}
+
+/* Service code button */
+.service_code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    padding: 6px 12px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+/* Copyright */
+.copy-write {
+    font-size: 12px;
+}
+
+/* ===================== */
+/* RESPONSIVE BREAKPOINTS */
+/* ===================== */
+
+@media (max-width: 1024px) {
+    .footer_inner_container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer_inner_container {
+        width: 90%;
+    }
+
+    .footer_data {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_icons {
+        justify-content: center;
+    }
+
+    .footer_data {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .service_code {
+        align-self: flex-start;
+    }
+
+    .copy-write {
+        text-align: center;
+    }
+}
