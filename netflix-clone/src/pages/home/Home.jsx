@@ -3,6 +3,7 @@ import Header from '../../components/header/Header.jsx'
 import Footer from '../../components/footer/Footer.jsx'
 import Banner from '../../components/banner/Banner.jsx'
 import RowList from '../../components/rows/rowlist/RowList.jsx'
+import DevCredit from '../../components/author/DevCredit.jsx'
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <Header />
       <Banner />
       <RowList />
-      <Footer />
+      <DevCredit />
     </div>
   );
 }

@@ -1,0 +1,170 @@
+/* ═══════════════════════════════════════════
+   Developer Credit — Floating Badge
+   ═══════════════════════════════════════════ */
+
+.dev-badge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(80px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.4s ease,
+              background 0.2s ease;
+}
+
+.dev-badge.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dev-badge:hover {
+  background: rgba(0, 102, 204, 0.9);
+  border-color: rgba(0, 102, 204, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 102, 204, 0.3);
+}
+
+.dev-badge-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.dev-badge-label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Subtle pulse ring behind the badge */
+.dev-badge::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(0, 102, 204, 0.4);
+  animation: badgePulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.04); }
+}
+
+
+/* ═══════════════════════════════════════════
+   Developer Credit — Footer Bar
+   ═══════════════════════════════════════════ */
+
+.dev-credit-bar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 14px 24px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dev-credit-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dev-credit-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dev-credit-prefix {
+  margin-right: 6px;
+}
+
+.dev-credit-name {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.dev-credit-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #0066cc;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dev-credit-name:hover {
+  color: #58a6ff;
+}
+
+.dev-credit-name:hover::after {
+  width: 100%;
+}
+
+.dev-credit-separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.dev-credit-repo {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dev-credit-repo:hover {
+  color: #58a6ff;
+}
+
+
+/* ── Mobile adjustments ── */
+
+@media (max-width: 768px) {
+  .dev-badge {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .dev-badge-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dev-credit-bar {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .dev-credit-inner {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dev-credit-separator {
+    display: none;
+  }
+}
