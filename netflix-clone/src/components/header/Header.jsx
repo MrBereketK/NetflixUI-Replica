@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
-import netflix_logo_5 from "../../assets/netflix last logo.jpg";
+import logo from "../../assets/netflix-logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -27,7 +27,7 @@ export default function Header() {
     <div className={`header_outer_container ${show ? "nav_black" : ""}`}>
       <div className="header_container">
         <div className="header_left">
-          <img src={netflix_logo_5} alt="Netflix Logo" />
+          <img src={logo} alt="Netflix Logo" />
 
           <ul>
             <li>Home</li>
